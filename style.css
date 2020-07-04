@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: "Roboto", sans-serif;
+    color: white;
+  }
+  
+  html{
+    background-color: #222629;
+
+  }
+
+
+  section h2 h1{
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    height: 200px;
+    color: white;
+    font-size: 20px;
+  }
+
+/**************************************
+            Buttons
+            
+**************************************/
+
+  button{
+    background-color: #be3144;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+  button:hover{
+    background-color: #e72942;
+    transition-delay: 0.2s;
+}
+
+
+/**************************************
+         Navigation bar
+
+**************************************/
+
+
+  #navbar{
+      overflow: hidden;
+      background-color: #303841 ;
+  }
+
+  #navbar .navbarhome{
+      color: #be3144;
+  }
+
+  #navbar .navbarhome:hover{
+        color: white;
+  }
+  
+
+  
+  ul {
+    list-style-type: none;
+    overflow: hidden;
+  }
+  
+  .dropdown {
+    float: left;
+    text-align: center;
+  }
+  a {
+    text-align: center;
+  }
+  
+  .dropbtn {
+    display: inline-block;
+    color: aliceblue;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration: none;
+  }
+
+  
+  
+  li a:hover{
+    background-color: #be3144;
+
+  }
+  
+  .dropdown {
+    display: inline-block;
+
+  }
+  
+  .dropdown-content {
+    z-index: 999;
+     display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    
+
+  }
+  
+  .dropdown-content a {
+    color: #E0E0E0;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {background-color: #555;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+
+  }
+  
+
+/**************************************
+            Contact us
+
+**************************************/
+
+
+
+.contact{
+    box-sizing: border-box;
+    width: 105%;
+}
+input[type=text],select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    color: black;
+}
+select{
+    color: black;
+}
+option{
+    color: black;
+}
+
+input[type=submit]{
+    background-color: #be3144;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    background-color: #e72942;
+    transition-delay: 0.2s;
+}
+
+.container-panel{
+    border-radius: 5px;
+    background-color: #34495e;
+    padding: 10px;
+    margin-top: 30px;
+    margin-left: 350px;
+    margin-right: 350px;
+}
+
+.col{
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+/****************************
+           Game     
+      
+*****************************/
+
+.game{
+
+    position: relative;
+    width: 750px;
+    border-radius: 5px;
+    background-color: #34495e;
+    padding: 10px;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-top: 75px;
+    overflow: hidden;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+
+
+}
+
+.reset{
+    margin-left: 45%;
+    margin-bottom: 3%;
+}
+
+.panel{
+    position: relative;
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #b4b4b4;
+    margin: 44px auto;
+    border-radius: 2px;
+}
+
+.panel div{
+    height: 40px;
+    width: 40px;
+    border-style: solid;
+    border-color: #34495e;
+    text-align: center;
+    padding-top: 8px;
+    /*padding-top: 3px;
+    padding-left: 4px;*/
+}
+
+.panel div:hover{
+    border-color: #be3144;
+    cursor: pointer;
+}
+
+
+.clicked{
+    background-color: #4590c2;
+}
+
+/****************************
+         Developer  
+         
+.mine{
+    background-color: #be3144;
+}
+      
+*****************************/
+.developer-card{
+    border-radius: 5px;;
+    background-color: #34495e;
+    max-width: 400px;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.title{
+    font-size: 18px;
+    color: white;
+    margin-top: 5px;
+}
+
+.message-button{
+    margin-top: 10px;;
+    text-align: center;
+    font-size: 18px;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+}
+
+.school{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.git-logo{
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
