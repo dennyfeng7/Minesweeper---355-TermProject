@@ -316,6 +316,8 @@ input[type=submit]:hover{
     margin-top: 75px;
     overflow: hidden;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-bottom: 50px;
 
 }
 
