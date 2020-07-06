@@ -127,12 +127,31 @@
 
 **************************************/
 
-
-
-.contact{
-    box-sizing: border-box;
-    width: 105%;
+#para{
+  margin-bottom: 20px;
 }
+#contact-us{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#cc{
+  text-align: center;
+}
+
+#contact{
+  box-sizing: border-box;
+  border-radius: 5px; 
+  max-width: 670px;
+  height: auto;
+  background: #34495e;
+  margin: 0 auto;
+  padding: 40px 40px;
+  text-align: left;
+  font-size: 18px;
+}
+
+
+
 input[type=text],select, textarea{
     width: 100%;
     padding: 12px;
@@ -141,13 +160,15 @@ input[type=text],select, textarea{
     margin-bottom: 16px;
     resize: vertical;
     color: black;
+    border-radius: 3px;
 }
-select{
+select, option{
     color: black;
 }
+/*
 option{
     color: black;
-}
+}*/
 
 input[type=submit]{
     background-color: #be3144;
@@ -185,11 +206,14 @@ input[type=submit]:hover{
 }
 
 @media screen and (max-width: 600px) {
-    .column, input[type=submit] {
+     input[type=submit] {
       width: 100%;
       margin-top: 0;
     }
+    
   }
+
+
 /****************************
            Game     
       
@@ -197,14 +221,13 @@ input[type=submit]:hover{
 
 .game{
 
-    position: relative;
-    width: 750px;
+    box-sizing: border-box;
+    max-width: 750px;
+    height: auto;
     border-radius: 5px;
     background-color: #34495e;
     padding: 10px;
-    margin-left: 350px;
-    margin-right: 350px;
-    margin-top: 75px;
+    margin: 75px auto;
     overflow: hidden;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
 
@@ -306,14 +329,14 @@ input[type=submit]:hover{
 
 .game-rules{
 
-    position: relative;
-    width: 750px;
+
+    box-sizing: border-box;
+    max-width: 750px;
+    height: auto;
     border-radius: 5px;
     background-color: #34495e;
     padding: 50px 50px 50px 50px;
-    margin-left: 350px;
-    margin-right: 350px;
-    margin-top: 75px;
+    margin: 75px auto;
     overflow: hidden;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -325,7 +348,17 @@ input[type=submit]:hover{
     margin-bottom: 20px;
 }
 
+.list-of-rules > li{
+    margin-bottom: 50px;
+}
 
+@media screen and (max-width: 600px) {
+    .game-rules{
+   width: 100%;
+   margin: 0 0;
+ }
+ 
+}
 
 
 
