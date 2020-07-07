@@ -33,13 +33,13 @@
         
             
 
-                <form id="contact">
-                    <label for="f-name">First name</label>
+                <form id="contact" action="contactform.php" method="post">
+                    <label for="f-name" name="f-name">First name</label>
                     <input type="text" id="f-name" name="firstname" placeholder="Enter your first name here">
 
-                    <label for="l-name">Last name</label>
+                    <label for="l-name" name="l-name">Last name</label>
                     <input type="text" id="l-name" name="lastname" placeholder="Enter your last name here">
-                    <label for="country">Country</label>
+                    <label for="country" name="country">Country</label>
 
 
                 <select placeholder="Select country">
@@ -53,8 +53,8 @@
                 </select>
 
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Write your message here"></textarea>
-                    <input type="submit" value="Submit">
+                    <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+                    <input type="submit" name="submit" value="Submit">
                 </form>
             
         

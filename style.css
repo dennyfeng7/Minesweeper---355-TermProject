@@ -12,6 +12,11 @@
 
   }
 
+  a:hover{
+    background-color: #be3144;
+    color: white;
+  }
+
 
   section h2 h1{
     font-family: "Roboto", sans-serif;
