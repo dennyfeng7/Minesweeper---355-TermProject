@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             //control left click
             box.oncontextmenu = function(event){
-                console.log('right click');
                 event.preventDefault();
                 addFlag(box);
             }
+
         }
-        
+
 
     //add numbers
 
@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         box.classList.add('clicked');
 
     }
+
 
     function checkbox(box, cid){
         const leftEdge = (cid % width === 0);
@@ -175,6 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
 }    
 
+
+
 function checkWin(){
     let matches = 0;
 
@@ -236,8 +239,23 @@ function newGame(){
         
     });
 
-    
-    
+    var down = {};
+    $(document).keydown(function(e) {
+        down[e.keyCode] = true;
+    }).keyup(function(e) {
+        if (down[67] && down[72] && down[84]) {
+            board.forEach(box =>{
+                if(box.classList.contains('mine')){
+
+                    box.style.backgroundColor = "#be3144";
+
+                }
+            })
+        }
+        down[e.keyCode] = false;
+    })
+
+    console.log(board)
 
 
 })

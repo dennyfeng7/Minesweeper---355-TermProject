@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['submit'])){
+/*if (isset($_POST['submit'])){
 
     $fname = $_POST['f-name'];
     $lname = $_POST['l-name'];
@@ -17,4 +17,4 @@ if (isset($_POST['submit'])){
 
     mail();
 
-}
+}*/
