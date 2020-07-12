@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const newbox = document.getElementById(nid);
                 click(newbox);
             }
-            if(cid < 98 && !rightEdge){
+            if(cid < 99 && !rightEdge){
                 const nid = board[parseInt(cid) + 1].id;
                 const newbox = document.getElementById(nid);
                 click(newbox);
@@ -166,11 +166,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if(box.classList.contains('mine')){
             box.style.backgroundColor = "#be3144";
             box.style.padding = "3px 0 0 4px";
-            box.innerHTML = "<img src='https://img.icons8.com/windows/32/000000/bomb-with-burning-wick.png'/>";
+            box.innerHTML = "<img src='Images/bomb.png'/>";
             box.classList.remove('mine');
             box.classList.add('clicked');
                         
         }
+        document.getElementById("status").innerHTML = "Game Over!";
+        document.querySelector(".pop-up").style.display = "block";
+
+
+
     })
 
     
@@ -187,6 +192,7 @@ function checkWin(){
         }
         if(matches === numberOfMines){
             console.log('You win');
+            document.querySelector(".pop-up").style.display = "block";
             gameEnd = true;
 
         }
@@ -215,7 +221,7 @@ function newGame(){
                 if(!box.classList.contains('flag')){
                     box.classList.add('flag');
                     box.style.padding = "5px 0 0 4px";
-                    box.innerHTML = "<img src='https://img.icons8.com/metro/26/000000/empty-flag.png'/>";
+                    box.innerHTML = "<img src='Images/flag.png'/>";
                    // box.style.backgroundColor = "green";
                     //box.innerHTML = 'F';
                     numberOfFlags++;
@@ -234,10 +240,17 @@ function newGame(){
         }
 
          document.querySelector('.reset').addEventListener('click', function(){
-        
-        newGame();
+
+            document.querySelector(".pop-up").style.display = "none";
+            newGame();
         
     });
+
+       document.getElementById("close").onclick = function(){
+
+            document.querySelector(".pop-up").style.display = "none";
+
+       }
 
     var down = {};
     $(document).keydown(function(e) {
@@ -256,6 +269,8 @@ function newGame(){
     })
 
     console.log(board)
+
+
 
 
 })
