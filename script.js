@@ -268,8 +268,6 @@ function newGame(){
         down[e.keyCode] = false;
     })
 
-    console.log(board)
-
 
 
 
