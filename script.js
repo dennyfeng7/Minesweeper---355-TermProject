@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const newbox = document.getElementById(nid);
                 click(newbox);
             }
-            if(cid < 99 && !rightEdge){
+            if(cid < 98 && !rightEdge){
                 const nid = board[parseInt(cid) + 1].id;
                 const newbox = document.getElementById(nid);
                 click(newbox);
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         document.getElementById("status").innerHTML = "Game Over!";
         document.querySelector(".pop-up").style.display = "block";
-
+        document.querySelector(".pop-up").style.backgroundColor = "#222629";
 
 
     })
@@ -192,7 +192,9 @@ function checkWin(){
         }
         if(matches === numberOfMines){
             console.log('You win');
+            document.getElementById("status").innerHTML = "You Won! You did the impossible!";
             document.querySelector(".pop-up").style.display = "block";
+            document.querySelector(".pop-up").style.backgroundColor = "#6ef091";
             gameEnd = true;
 
         }
@@ -230,6 +232,7 @@ function newGame(){
                 }else{
                     box.classList.remove('flag');
                    // box.style.backgroundColor = '#b4b4b4';
+                    box.style.padding = "8px";
                     box.innerHTML = '';
                     numberOfFlags--;
                 }

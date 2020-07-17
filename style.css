@@ -366,7 +366,7 @@ input[type=submit]:hover{
 
 .history{
   margin-top: 50px;
-  line-height: 30px;
+  line-height: 60px;
 }
 
 @media screen and (max-width: 600px) {
@@ -386,7 +386,7 @@ input[type=submit]:hover{
 .pop-up{
   border-radius: 5px;
   padding: 25px 50px 25px 50px;
-  background-color: #222629;
+ /* background-color: #222629;*/
   position: absolute;
   display: none;
   top: 50%;
