@@ -241,9 +241,22 @@ input[type=submit]:hover{
 
 }
 
+#mydiv{
+  text-align: center;
+  margin-top: 18px;
+  font-size: 18px;
+}
+
 .reset{
-    margin-left: 45%;
-    margin-bottom: 3%;
+    /*margin-left: 34%;
+    margin-bottom: 3%;*/
+    text-align: center;
+}
+
+.save{
+    margin: auto;
+    /*margin-left: 41%;*/
+    text-align: center;
 }
 
 .panel{
@@ -253,7 +266,7 @@ input[type=submit]:hover{
     display: flex;
     flex-wrap: wrap;
     background-color: #b4b4b4;
-    margin: 44px auto;
+    margin: 20px auto;
     border-radius: 2px;
 }
 
@@ -281,7 +294,6 @@ input[type=submit]:hover{
 
 
 /****************************
-
 
          Developer  
               
@@ -392,7 +404,6 @@ input[type=submit]:hover{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: 0.5s;
   justify-content: center;
   text-align: center;
 }
@@ -406,6 +417,58 @@ input[type=submit]:hover{
 .pop-up button{
   justify-content: center;
   align-items: center;
+}
+
+.annoying-pop-up{
+  border-radius: 5px;
+  padding: 25px 50px 25px 50px;
+  background-color: #222629;
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+  justify-content: center;
+  text-align: center;
+}
+
+#close-this{
+  margin-top: 30px;
+}
+
+#reset{
+  margin-left: 33%;
+  
+}
+#recreate{
+  margin-right: 33%;
+}
+
+#reset, #recreate, #save{
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 600px){
+  .reset{
+    margin-left:20%;
+  }
+  .recreate{
+    text-align: center;
+    margin-left: 38%;
+    margin-top:20px;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .recreate{
+    text-align: center;
+    margin-left: 38%;
+    margin-top:20px;
+  }
 }
 
 

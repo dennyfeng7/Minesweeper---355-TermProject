@@ -5,18 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let numberOfMines = 20;
     let numberOfFlags = 0;
     let gameEnd = false;
+    let Mines = Array(numberOfMines).fill('mine');
+    let emptyArray = Array(width * width - numberOfMines).fill('safe');
+    let gameArray = emptyArray.concat(Mines);
+    let shuffle = gameArray.sort(() => Math.random() - 0.5);
 
     newGame();
 
+    
+
+    //document.querySelector(".annoying-pop-up").style.display = "block";
+
+
     function createBoard(){
- 
-        const Mines = Array(numberOfMines).fill('mine');
-
-        const emptyArray = Array(width * width - numberOfMines).fill('safe');
         
-        const gameArray = emptyArray.concat(Mines);
-
-        const shuffle = gameArray.sort(() => Math.random() - 0.5);
+    
 
         for(let i=0; i<width * width; i++){
             const box = document.createElement('div')
@@ -68,10 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 
-
-    //createBoard();
-
-
     //click function
 
     function click(box){
@@ -79,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if(gameEnd) return;
         if(box.classList.contains('clicked') || box.classList.contains('flag')) return;
         if(box.classList.contains('mine')){
-            console.log('Game over');
             gameOver(box);
         } else{
             let total = box.getAttribute('data');
@@ -159,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function gameOver(box){
-       // console.log("game over");
         gameEnd = true;
     
     board.forEach(box => {
@@ -191,10 +188,9 @@ function checkWin(){
             matches++;
         }
         if(matches === numberOfMines){
-            console.log('You win');
-            document.getElementById("status").innerHTML = "You Won! You did the impossible!";
+            document.getElementById("status").innerHTML = "You Won!";
             document.querySelector(".pop-up").style.display = "block";
-            document.querySelector(".pop-up").style.backgroundColor = "#6ef091";
+            document.querySelector(".pop-up").style.backgroundColor = "#1a73e8";
             gameEnd = true;
 
         }
@@ -203,11 +199,13 @@ function checkWin(){
 
 function newGame(){
 
-        const panel =  document.querySelector('.panel');
+        //const panel =  document.querySelector('.panel');
         panel.innerHTML = '';
         gameEnd = false;
+        shuffle = gameArray.sort(() => Math.random() - 0.5);
         board  = [];
         numberOfFlags = 0;
+        document.getElementById('flags').innerHTML = 20;
         createBoard();
         
         
@@ -227,6 +225,7 @@ function newGame(){
                    // box.style.backgroundColor = "green";
                     //box.innerHTML = 'F';
                     numberOfFlags++;
+                    document.getElementById('flags').innerHTML = numberOfMines - numberOfFlags;
                     checkWin();
 
                 }else{
@@ -235,9 +234,10 @@ function newGame(){
                     box.style.padding = "8px";
                     box.innerHTML = '';
                     numberOfFlags--;
+                    document.getElementById('flags').innerHTML = numberOfMines - numberOfFlags;
+
                 }
 
-                console.log('number of flags: '  + numberOfFlags);
 
             }
         }
@@ -270,6 +270,72 @@ function newGame(){
         }
         down[e.keyCode] = false;
     })
+
+
+    document.getElementById("close-this").onclick = function(){
+
+        document.querySelector(".annoying-pop-up").style.display = "none";
+
+   }
+
+
+
+document.getElementById('save').onclick = function(){
+    if(!gameEnd){
+        saveGame();
+    }else{
+        document.getElementById("status").innerHTML = "Cannot save if the game is over!";
+        document.querySelector(".pop-up").style.display = "block";
+    }
+
+}
+
+document.getElementById('recreate').onclick = function(){
+    
+     rec();
+     
+     }
+
+
+
+function rec(){
+    const g = localStorage.getItem('saveFile');
+    const obj = JSON.parse(g);
+    // for(let i=0; i<g.length; i++){
+    //     console.log(g[i]);
+    // }
+    board = []
+    panel.innerHTML = '';
+    console.log(obj);
+    Mines = obj.mine_array;
+    emptyArray = obj.empty_Array;
+    gameArray = obj.game_Array;
+    shuffle = obj.shuffle_;
+  //  board = obj.board_;
+    console.log(board);
+    createBoard();
+    //Mines = JSON.parse(g.mine_array);
+
+    //console.log(Mines);
+    
+
+}
+
+function saveGame(){
+
+    let gameData = {
+            mine_array: Mines,
+            empty_Array: emptyArray,
+            game_Array: gameArray,
+            shuffle_:shuffle
+    }
+
+    localStorage.setItem('saveFile', JSON.stringify(gameData));
+
+
+}
+
+
 
 
 
