@@ -298,12 +298,10 @@ document.getElementById('recreate').onclick = function(){
 
 
 
-function rec(){
-    const g = localStorage.getItem('saveFile');
+function rec(g = localStorage.getItem('saveFile')){
+     //g = localStorage.getItem('saveFile');
     const obj = JSON.parse(g);
-    // for(let i=0; i<g.length; i++){
-    //     console.log(g[i]);
-    // }
+    console.log(obj);
     board = []
     panel.innerHTML = '';
     console.log(obj);
@@ -311,12 +309,10 @@ function rec(){
     emptyArray = obj.empty_Array;
     gameArray = obj.game_Array;
     shuffle = obj.shuffle_;
-  //  board = obj.board_;
+ 
     console.log(board);
     createBoard();
-    //Mines = JSON.parse(g.mine_array);
-
-    //console.log(Mines);
+    
     
 
 }
