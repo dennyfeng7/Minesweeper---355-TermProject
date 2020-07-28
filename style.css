@@ -252,6 +252,9 @@ input[type=submit]:hover{
     margin-bottom: 3%;*/
     text-align: center;
 }
+a{
+  text-decoration: none;
+}
 
 .save{
     margin: auto;
@@ -306,6 +309,7 @@ input[type=submit]:hover{
     text-align: center;
     margin: auto;
     margin-top: 30px;
+    padding-bottom: 20px;
 }
 
 .developer-card > p{
@@ -471,14 +475,59 @@ input[type=submit]:hover{
   }
 }
 
+.welcome{
+  
+    box-sizing: border-box;
+    max-width: 750px;
+    height: 400px;
+    border-radius: 5px;
+    background-color: #34495e;
+    padding: 50px 50px 50px 50px;
+    margin: 75px auto;
+    overflow: hidden;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-bottom: 50px;
 
 
+}
+
+#pls{
+  margin-top: 50px;
+  margin-bottom: 75px;
+}
+
+#buttons{
+  margin-bottom: 75px;
+}
 
 
+.description{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
+input[type=text], input[type=password]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  color: black;
+}
 
-
-
+#register{
+  box-sizing: border-box;
+  border-radius: 5px; 
+  max-width: 670px;
+  height: auto;
+  background: #34495e;
+  margin: 30px auto;
+  padding: 40px 40px;
+  text-align: left;
+  font-size: 18px;
+}
 
 
 
